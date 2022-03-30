@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace LäxaTvå
 {
@@ -15,7 +15,7 @@ namespace LäxaTvå
 
 
             string menyVal;
-            
+
             do
             {
                 Console.WriteLine("BANKEN");
@@ -28,12 +28,12 @@ namespace LäxaTvå
                 menyVal = Console.ReadLine();
 
 
-            double räntesats = 0;
-            double insättning = 0;
-            double uttag = 0;
-            double saldo = 0; ;
-            
-               
+                double räntesats = 0;
+                double insättning = 0;
+                double uttag = 0;
+                double saldo = 0; 
+
+
 
                 switch (menyVal)
                 {
@@ -51,13 +51,13 @@ namespace LäxaTvå
                         Console.WriteLine("Var god ange summa du vill ta ut");
                         uttag = double.Parse(Console.ReadLine());
                         saldo = saldo - uttag;
-                        
+
                         break;
 
                     case "S":
                     case "s":
                         Console.WriteLine("Ditt saldo är:" + saldo);
-                        
+
                         break;
 
                     case "R":
@@ -75,16 +75,16 @@ namespace LäxaTvå
                             Console.WriteLine("Välj antal år");
                             double antalÅr = double.Parse(Console.ReadLine());
 
-                          
 
-                            for (int i = 1; i < antalÅr; i++)
+
+                            for (int i = 0; i < antalÅr; i++)
                             {
-
-                                double avkastning =  (saldo +årligInsättning) * (räntesats / 100);
-                                double sparandet = årligInsättning + avkastning;      // total avkastning för ett år
+                                
+                                double avkastning = (saldo + årligInsättning) * (räntesats / 100);
+                                double sparandet = saldo+årligInsättning + avkastning;      // total avkastning för ett år
                                 saldo = +sparandet;
 
-                        
+
 
 
                                 // detta ska upprepas så många gånger som antal år
@@ -93,7 +93,7 @@ namespace LäxaTvå
 
                                 Console.WriteLine("Sparandet blir " + sparandet + " kr.");
 
-
+                                
                             }
 
                         }
@@ -110,11 +110,11 @@ namespace LäxaTvå
                         Console.WriteLine("Ogiltigt alternativ");
                         break;
 
-                       }
+                }
 
 
 
-            } while (menyVal != "i" + "I" + "U" + "u" + "S" + "s" + "R"+ "r");
+            } while (menyVal != "i" + "I" + "U" + "u" + "S" + "s" + "R" + "r");
 
 
         }
@@ -124,4 +124,5 @@ namespace LäxaTvå
 
 
 }
+
 
